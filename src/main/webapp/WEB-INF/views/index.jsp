@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,12 +13,12 @@
 
 	<!-- Stylesheets -->
 	<!-- Dropdown Menu -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/css/superfish.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/superfish.css">
 	<!-- Owl Slider -->
 	<!-- <link rel="stylesheet" href="css/owl.carousel.css"> -->
 	<!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
 	<!-- Date Picker -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-datepicker.min.css">
 	<!-- CS Select -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/cs-select.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/cs-skin-border.css">
@@ -36,13 +36,15 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	
 </head>
+
+
 <body>
 	<div id="fh5co-wrapper">
 	<div id="fh5co-page">
@@ -88,7 +90,7 @@
 	<aside id="fh5co-hero" class="js-fullheight">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
-		   	<li style="background-image: url(images/slider1.jpg);">
+		   	<li style="background-image: url(${pageContext.request.contextPath}/resources/images/slider1.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
@@ -104,7 +106,7 @@
 		   			</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(images/slider2.jpg);">
+		   	<li style="background-image: url(${pageContext.request.contextPath}/resources/images/slider2.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
@@ -120,7 +122,7 @@
 		   			</div>
 		   		</div>
 		   	</li>
-		   	<li style="background-image: url(images/slider3.jpg);">
+		   	<li style="background-image: url(${pageContext.request.contextPath}/resources/images/slider3.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		<div class="container">
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
@@ -216,7 +218,7 @@
 
 			<div class="row">
 				<div class="feature-full-1col">
-					<div class="image" style="background-image: url(images/hotel_feture_1.jpg);">
+					<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel_feture_1.jpg);">
 						<div class="descrip text-center">
 							<p><small>For as low as</small><span>$100/night</span></p>
 						</div>
@@ -230,7 +232,7 @@
 
 				<div class="feature-full-2col">
 					<div class="f-hotel">
-						<div class="image" style="background-image: url(images/hotel_feture_2.jpg);">
+						<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel_feture_2.jpg);">
 							<div class="descrip text-center">
 								<p><small>For as low as</small><span>$99/night</span></p>
 							</div>
@@ -243,7 +245,7 @@
 						</div>
 					</div>
 					<div class="f-hotel">
-						<div class="image" style="background-image: url(images/hotel_feture_3.jpg);">
+						<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel_feture_3.jpg);">
 							<div class="descrip text-center">
 								<p><small>For as low as</small><span>$99/night</span></p>
 							</div>
@@ -306,7 +308,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_1.jpg" class="img-responsive" alt="Image">
+									<img src="${pageContext.request.contextPath}/resources/images/tab_img_1.jpg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -325,7 +327,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_2.jpg" class="img-responsive" alt="Image">
+									<img src="${pageContext.request.contextPath}/resources/images/tab_img_2.jpg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -344,7 +346,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_3.jpg" class="img-responsive" alt="Image">
+									<img src="${pageContext.request.contextPath}/resources/images/tab_img_3.jpg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -363,7 +365,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_4.jpg" class="img-responsive" alt="Image">
+									<img src="${pageContext.request.contextPath}/resources/images/tab_img_4.jpg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -382,7 +384,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_5.jpg" class="img-responsive" alt="Image">
+									<img src="${pageContext.request.contextPath}/resources/images/tab_img_5.jpg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -401,7 +403,7 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-6">
-									<img src="images/tab_img_6.jpg" class="img-responsive" alt="Image">
+									<img src="${pageContext.request.contextPath}/resources/images/tab_img_6.jpg" class="img-responsive" alt="Image">
 								</div>
 								<div class="col-md-6">
 									<span class="super-heading-sm">World Class</span>
@@ -471,7 +473,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-1.jpg);">
+					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/image-1.jpg);">
 						<div class="date text-center">
 							<span>09</span>
 							<small>Aug</small>
@@ -482,7 +484,7 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-2.jpg);">
+					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/image-2.jpg);">
 						<div class="date text-center">
 							<span>09</span>
 							<small>Aug</small>
@@ -493,7 +495,7 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(images/image-3.jpg);">
+					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/image-3.jpg);">
 						<div class="date text-center">
 							<span>09</span>
 							<small>Aug</small>
@@ -571,29 +573,31 @@
 	<!-- END fh5co-wrapper -->
 	
 	<!-- Javascripts -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-2.1.4.min.js"></script>
 	<!-- Dropdown Menu -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/hoverIntent.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/superfish.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.waypoints.min.js"></script>
 	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.countTo.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.stellar.min.js"></script>
 	<!-- Owl Slider -->
 	<!-- // <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Date Picker -->
-	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/classie.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/selectFx.js"></script>
 	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.flexslider-min.js"></script>
 
-	<script src="js/custom.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
 
 </body>
+
+
 </html>

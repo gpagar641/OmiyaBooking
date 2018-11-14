@@ -22,6 +22,16 @@ public class HomeController {
 		return model;
 		
 	}	
-	
+
+	@RequestMapping(value="/showHotelsList", method=RequestMethod.GET)
+	public ModelAndView showHotelsList(HttpServletRequest request)   
+	{
+		ModelAndView model=new ModelAndView("index");
+		
+		
+		
+		return model;
+		
+	}	
 	
 }

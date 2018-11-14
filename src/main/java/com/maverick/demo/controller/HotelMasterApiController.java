@@ -17,8 +17,8 @@ import com.maverick.demo.hotelrepository.HotelsRepository;
 public class HotelMasterApiController {
 	
 	@Autowired
-	HotelsRepository hotelsRepository;
-	 
+	HotelsRepository hotelsRepository; 
+	
 	
 	@RequestMapping(value = "/saveHotels", method = RequestMethod.GET)
 	public Hotels saveHotels(HttpServletRequest request, HttpServletResponse response) {

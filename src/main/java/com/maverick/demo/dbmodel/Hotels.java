@@ -53,6 +53,9 @@ public class Hotels {
 	
 	@Column(name="del_status",length=11)
 	private int delStatus;
+	
+	@Column(name="city_id",length=11)
+	private int cityId;
 
 	public int getHotelId() {
 		return hotelId;
@@ -150,12 +153,20 @@ public class Hotels {
 		this.delStatus = delStatus;
 	}
 
+	public int getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
+	}
+
 	@Override
 	public String toString() {
 		return "Hotels [hotelId=" + hotelId + ", hotelName=" + hotelName + ", pincode=" + pincode + ", ownrName="
 				+ ownrName + ", contact=" + contact + ", email=" + email + ", image=" + image + ", acRoomCount="
 				+ acRoomCount + ", nonacRoomCount=" + nonacRoomCount + ", acRoomCost=" + acRoomCost + ", nonacRoomCost="
-				+ nonacRoomCost + ", delStatus=" + delStatus + "]";
+				+ nonacRoomCost + ", delStatus=" + delStatus + ", cityId=" + cityId + "]";
 	}
 	
 	

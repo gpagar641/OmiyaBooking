@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="t_booking_details")
-public class Booking_details {
+public class BookingDetails {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

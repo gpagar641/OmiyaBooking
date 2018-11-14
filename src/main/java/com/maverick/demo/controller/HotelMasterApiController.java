@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.maverick.demo.dbmodel.Hotels; 
+import com.maverick.demo.dbmodel.Hotels;
+import com.maverick.demo.hotelrepository.GetHotelsAndBsyRoomRepository;
 import com.maverick.demo.hotelrepository.HotelsRepository;
 
 @Controller
@@ -19,6 +20,8 @@ public class HotelMasterApiController {
 	
 	@Autowired
 	HotelsRepository hotelsRepository; 
+	
+	GetHotelsAndBsyRoomRepository getHotelsAndBsyRoomRepository;
 	
 	@RequestMapping(value = "/showHotels", method = RequestMethod.GET)
 	public ModelAndView showHotels(HttpServletRequest request, HttpServletResponse response) {

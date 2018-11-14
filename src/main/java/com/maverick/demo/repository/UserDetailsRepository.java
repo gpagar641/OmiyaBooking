@@ -10,4 +10,4 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails, Intege
 	
 	UserDetails findByUserIdAndDelStatus(int userId,int delStatus);
 	
-}
+}   

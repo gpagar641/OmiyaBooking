@@ -79,9 +79,9 @@
 		   					<div class="desc">
 		   						<p><span>OMIYA</span></p>
 		   						<h2>Reserve Room for Family Vacation</h2>
-			   					<p>
+			   					<!-- <p>
 			   						<a href="#hotels" class="btn btn-primary btn-lg">Book Now</a>
-			   					</p>
+			   					</p> -->
 		   					</div>
 		   				</div>
 		   			</div>
@@ -95,9 +95,9 @@
 		   					<div class="desc">
 		   						<p><span>OMIYA</span></p>
 		   						<h2>Make Your Vacation Comfortable</h2>
-			   					<p>
+			   					<!-- <p>
 			   						<a href="#" class="btn btn-primary btn-lg">Book Now</a>
-			   					</p>
+			   					</p> -->
 		   					</div>
 		   				</div>
 		   			</div>
@@ -112,36 +112,37 @@
 		<div class="container">
 			<div class="row">
 				<div id="availability">
-					<form action="#">
+					<form action="${pageContext.request.contextPath}/showHotelList" method="post">
 
 						<div class="a-col">
 							<section>
-								<select class="cs-select cs-skin-border">
-									<option value="" disabled selected>Select Hotel</option>
-									<option value="email">Luxe Hotel</option>
-									<option value="twitter">Deluxe Hotel</option>
-									<option value="linkedin">Five Star Hotel</option>
+								<select class="cs-select cs-skin-border" name="cityid">
+									<option value="" disabled selected>Select City</option>
+									<option value="1">Nashik</option>
+									<!-- <option value="twitter">Deluxe Hotel</option>
+									<option value="linkedin">Five Star Hotel</option> -->
 								</select>
 							</section>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-start">Check In</label>
-								<input type="text" class="form-control" id="date-start" />
+								<input type="text" class="form-control" id="date-start" name="date_start" />
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-end">Check Out</label>
-								<input type="text" class="form-control" id="date-end" />
+								<input type="text" class="form-control" id="date-end" name="date_end" />
 							</div>
 						</div>
-						<div class="a-col action">
-							<a href="#">
+						<!-- <div class="a-col action"> -->
+							 <button type="submit" class="btn-primary">
 								<span>Check</span>
 								Availability
-							</a>
-						</div>
+								</button>
+							 
+						<!-- </div> -->
 					</form>
 				</div>
 			</div>
@@ -165,31 +166,35 @@
 				 
 
 				<div class="feature-full-2col">
+				 
 					<div class="f-hotel">
-						<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel_feture_2.jpg);">
-							<div class="descrip text-center">
+						<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel/${hotelImagesList[0].imageName});">
+							<!-- <div class="descrip text-center">
 								<p><small>For as low as</small><span>$99/night</span></p>
-							</div>
+							</div> -->
 						</div>
 						<div class="desc">
-							<h3>Hotel Bora</h3>
+							<h3>${hotelImagesList[0].hotelName}</h3>
 							<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, 
 							in suscipit urna condimentum sed. </p>
-							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
-						</div>
+<!-- 							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+ -->						</div>
 					</div>
+					
+					
 					<div class="f-hotel">
-						<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel_feture_3.jpg);">
-							<div class="descrip text-center">
+						<div class="image" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel/${hotelImagesList[1].imageName});">
+							<!-- <div class="descrip text-center">
 								<p><small>For as low as</small><span>$99/night</span></p>
-							</div>
+							</div> -->
 						</div>
 						<div class="desc">
-							<h3>D’Morvie</h3>
+							<h3>${hotelImagesList[1].hotelName}</h3>
 							<p>Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. </p>
-							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
-						</div>
+<!-- 							<p><a href="#" class="btn btn-primary btn-luxe-primary">Book Now <i class="ti-angle-right"></i></a></p>
+ -->						</div>
 					</div>
+					 
 				</div>
 			</div>
 
@@ -210,23 +215,27 @@
 				</div>
 			</div>
 			<div class="row">
+			<c:forEach var="hotelImages" items="${hotelImagesList}" varStatus="count"> 
+			<c:if test="${count.index<3}">
 				<div class="col-md-4">
-					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/image-1.jpg);">
-						<div class="date text-center">
+					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel/${hotelImagesList[count.index+1].imageName});">
+						<!-- <div class="date text-center">
 							<span>09</span>
 							<small>Aug</small>
-						</div>
+						</div> -->
 					</div>
 					<div class="desc">
-						<h3><a href="#">Most Expensive Hotel</a></h3>
+						<h3><a href="#">${hotelImagesList[count.index+1].hotelName}</a></h3>
 					</div>
 				</div>
-				<div class="col-md-4">
+				</c:if>
+				</c:forEach>
+				<%-- <div class="col-md-4">
 					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/image-2.jpg);">
-						<div class="date text-center">
+						<!-- <div class="date text-center">
 							<span>09</span>
 							<small>Aug</small>
-						</div>
+						</div> -->
 					</div>
 					<div class="desc">
 						<h3><a href="#">1st Anniversary of Luxe Hotel</a></h3>
@@ -234,15 +243,15 @@
 				</div>
 				<div class="col-md-4">
 					<div class="blog-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/image-3.jpg);">
-						<div class="date text-center">
+						<!-- <div class="date text-center">
 							<span>09</span>
 							<small>Aug</small>
-						</div>
+						</div> -->
 					</div>
 					<div class="desc">
 						<h3><a href="#">Discover New Adventure</a></h3>
 					</div>
-				</div>
+				</div> --%>
 			</div>
 		</div>
 	</div>

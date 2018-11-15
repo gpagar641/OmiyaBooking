@@ -102,8 +102,11 @@
 
 
 
-					<c:forEach var="i" begin="1" end="5">
- 
+					<c:forEach var="getHotelsAndBsyRoomList" items="${getHotelsAndBsyRoomList}" varStatus="count">
+ 					<c:choose>
+ 						<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)!=0 or (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)!=0}">
+ 						
+ 						
 						<div class="row" align="center">
 							<div class="col-md-12" align="center">
 								<div class='tile' align="center">
@@ -111,21 +114,166 @@
 										style="width: 50%; background-image: url(https://static.pexels.com/photos/9050/pexels-photo.jpg);" />
 
 									<div class='tile-info'">
-										<h4 style="margin-bottom: 0px;">Hotel Name sfsdf</h4>
-										<p style="margin-bottom: 0px;font-size:18px;">City</p>
-<br>
-<br>
-										<p style="margin-bottom: 0px ;font-size:18px;">AC Room - &#x20B9;</p>
-										<p style="margin-bottom: 0px; font-size:18px;">Non AC Room - &#x20B9;</p>
+										<h4 style="margin-bottom: 0px;">Hotel Name ${getHotelsAndBsyRoomList.hotelName}</h4>
+										<p style="margin-bottom: 0px;font-size:18px;">City ${getHotelsAndBsyRoomList.cityName}</p> 
+										<p style="margin-bottom: 0px ;font-size:18px;">AC Room - &#x20B9;${getHotelsAndBsyRoomList.acRoomCost}</p>
+										<p style="margin-bottom: 0px; font-size:18px;">Non AC Room - &#x20B9;${getHotelsAndBsyRoomList.nonacRoomCost}</p>
 
-										<a class="btn btn-primary btn-luxe-primary">Book Now</a>
-
+										<a class="btn btn-primary btn-luxe-primary" data-toggle="modal" data-target="#myModal${getHotelsAndBsyRoomList.hotelId }"> Book Now</a>
+${ getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom }
+${ getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom }
 									</div>
 								</div>
 							</div>
+						</div><br><br>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal${getHotelsAndBsyRoomList.hotelId}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+       <!--  <div class="modal-body"> -->
+        <form action="">
+        
+    <div class="col-md-5"><strong> From Date :</strong><span>${startDate }</span></div><div class="col-md-4"><strong>To Date :</strong><span>${endDate }</span></div><div class="col-md-3"><strong>Days :</strong> ${diffDays}</div>
+      <input type="hidden" id="days" name="days" value="${diffDays}">
+       <input type="hidden" id="nonAc" name="nonAc" value="${getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom}">
+        <input type="hidden" id="ac" name="ac" value="${getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom}">
+       <hr>
+        <div class="col-md-12">
+					<div class="row">
+					<div class="col-md-6">
+							<div class="form-group">
+							<select class="form-control" id="roomType${getHotelsAndBsyRoomList.hotelId}" name="roomType${getHotelsAndBsyRoomList.hotelId}" required>
+							<option value="" selected disabled>Select Room Type</option>
+							<c:choose>
+ 						<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)!=0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)!=0}">
+ 							
+ 							<option value="0">Non-AC Room</option>
+							<option value="1">AC Room</option>
+							
+							</c:when>
+							
+							<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)==0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)!=0}">
+ 							<option value="0">Non-AC Room</option>
+							<option value="1" disabled>AC Room</option>
+							
+							</c:when>
+							
+							<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)!=0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)==0}">
+ 							<option value="0" disabled>Non-AC Room</option>
+							<option value="1" >AC Room</option>
+							
+							</c:when>
+ 						 
+							</c:choose>
+							</select>
+								 
+							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="noOfRooms${getHotelsAndBsyRoomList.hotelId}" name="noOfRooms${getHotelsAndBsyRoomList.hotelId}" onkeyup="getTotalBill(); return checkNum(event,this);"   onkeypress="return IsNumeric(event,this);" placeholder="No of Rooms" required>
+							</div>
+						</div>
+						
+							<div class="col-md-6">
+							<div class="form-group">
+							<select class="form-control" id="noOfAdult${getHotelsAndBsyRoomList.hotelId}" name="noOfAdult${getHotelsAndBsyRoomList.hotelId}" required>
+							<option value="" selected disabled>Select No of Adult</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							</select>
+								 
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+							<select class="form-control" id="noOfChild${getHotelsAndBsyRoomList.hotelId}" name="noOfChild${getHotelsAndBsyRoomList.hotelId}" required>
+							<option value="" selected disabled>Select No of Child</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							</select>
+								 
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="custName${getHotelsAndBsyRoomList.hotelId}" name="custName${getHotelsAndBsyRoomList.hotelId}" placeholder="Custmore Name"required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="custContact${getHotelsAndBsyRoomList.hotelId}" name="custContact${getHotelsAndBsyRoomList.hotelId}" placeholder="Customer Contact"required>
+							</div>
+						</div>
+						 <div class="col-md-6">
+							<div class="form-group">
+							<!-- 	<input type="text" class="form-control" placeholder="Customer Address"required> -->
+								<textarea id="custAdd${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" id="" cols="30" rows="3" placeholder="Address" ></textarea>
+							</div>
+						</div>
+						 <div class="col-md-6">
+							<div class="form-group">
+								<input type="email" id="custMail${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" placeholder="Customer Email"required>
+							</div>
+						</div>
+						 
+						 
+						 
+						
+						 <div class="col-md-6">
+							<div class="form-group">
+								<span>Payable Amount (Rs.) </span><span>2000</span>
+							</div>
+						</div>
+						 
+						 
+						<div class="col-md-5">
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<input type="submit" value="Proceed" class="btn btn-primary">
+							</div>
+						</div>
+					</div>
+				</div>
+        </form>
+        
+         <!--  <p>Some text in the modal.</p> -->
+       <!--  </div> -->
+         <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        </div>  
+      </div>
+      
+    </div>
+  </div>
 
 
+</c:when>
+ 					</c:choose>
 					</c:forEach>
 
 					
@@ -166,6 +314,8 @@
 			</div>
 		</div>
 	</footer>
+
+
 
 		</div>
 		<!-- END fh5co-page -->
@@ -209,6 +359,37 @@
 
 	<script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
 
+
+
+<script type="text/javascript">
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+        function IsNumeric(evt, element) {
+        	 var charCode = (evt.which) ? evt.which : event.keyCode
+
+        		        if (
+        		            (charCode != 45 || $(element).val().indexOf('-') != -1) &&   
+        		            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      
+        		            (charCode < 48 || charCode > 57))
+        		            return false;
+
+        		        return true;
+        }
+       
+        
+        function checkNum(eve, element) {
+        	if($(element).val().indexOf('.') == 0) {    $(element).val($(element).val().substring(1));
+        }
+        
+        }
+        
+        function getTotalBill() {
+			
+        	
+        	
+		}
+        </script>
+        
 </body>
 
 

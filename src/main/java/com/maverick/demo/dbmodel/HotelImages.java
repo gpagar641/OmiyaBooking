@@ -28,6 +28,9 @@ public class HotelImages {
 	
 	@Column(name="del_status",length=11)
 	private int delStatus;
+	
+	@Column(name="hotel_name",length=100)
+	private String hotelName;
 
 	public int getImageId() {
 		return imageId;
@@ -61,10 +64,18 @@ public class HotelImages {
 		this.delStatus = delStatus;
 	}
 
+	public String getHotelName() {
+		return hotelName;
+	}
+
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
+	}
+
 	@Override
 	public String toString() {
 		return "HotelImages [imageId=" + imageId + ", hotelId=" + hotelId + ", imageName=" + imageName + ", delStatus="
-				+ delStatus + "]";
+				+ delStatus + ", hotelName=" + hotelName + "]";
 	}
 	
 	

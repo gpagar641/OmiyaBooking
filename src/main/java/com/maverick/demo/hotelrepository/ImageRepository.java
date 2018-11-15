@@ -13,7 +13,7 @@ public interface ImageRepository extends JpaRepository<HotelImages, Integer>{
 	
 	List<HotelImages> findAllByHotelId(int hotelId);
 	
-	@Query(value="select * from m_images group by hotel_id order by image_id  desc limit 5",nativeQuery=true)
+	@Query(value="select i.image_id,i.del_status,i.hotel_id,i.image_name,h.hotel_name as hotel_name from m_images i,m_hotels h where h.hotel_id=i.hotel_id group by i.hotel_id order by i.image_id  desc limit 5",nativeQuery=true)
 	List<HotelImages> getHotelListWithBsyRoom();
 
 }

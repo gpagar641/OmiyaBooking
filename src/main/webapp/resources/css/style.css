@@ -6530,7 +6530,7 @@ button.close {
 
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 700px;
     margin: 30px auto;
   }
 
@@ -8861,6 +8861,9 @@ input[type="text"] {
 
 .fh5co-bg-color {
   background: #e6e6e6;
+}
+.fh5co-bg-color-dark {
+  background: #696565;
 }
 
 .section-title {

@@ -103,7 +103,7 @@
 
 
 					<c:forEach var="i" begin="1" end="5">
-
+ 
 						<div class="row" align="center">
 							<div class="col-md-12" align="center">
 								<div class='tile' align="center">

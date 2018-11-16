@@ -16,6 +16,9 @@ public class GetHotelsAndBsyRoom {
 	 
 	@Column(name="hotel_name" )
 	private String hotelName;
+	
+	@Column(name="image_name" )
+	private String hotelPic;
 	 
 	@Column(name="pincode" )
 	private String pincode;
@@ -58,6 +61,9 @@ public class GetHotelsAndBsyRoom {
 	
 	@Column(name="city_name")
 	private String cityName;
+	
+	@Column(name="address")
+	private String address;
 
 	public int getHotelId() {
 		return hotelId;
@@ -187,15 +193,35 @@ public class GetHotelsAndBsyRoom {
 		this.cityName = cityName;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getHotelPic() {
+		return hotelPic;
+	}
+
+	public void setHotelPic(String hotelPic) {
+		this.hotelPic = hotelPic;
+	}
+
 	@Override
 	public String toString() {
-		return "GetHotelsAndBsyRoom [hotelId=" + hotelId + ", hotelName=" + hotelName + ", pincode=" + pincode
-				+ ", ownrName=" + ownrName + ", contact=" + contact + ", email=" + email + ", image=" + image
-				+ ", acRoomCount=" + acRoomCount + ", nonacRoomCount=" + nonacRoomCount + ", acRoomCost=" + acRoomCost
-				+ ", nonacRoomCost=" + nonacRoomCost + ", delStatus=" + delStatus + ", cityId=" + cityId
-				+ ", nonacBsyRoom=" + nonacBsyRoom + ", acBsyRoom=" + acBsyRoom + ", cityName=" + cityName + "]";
+		return "GetHotelsAndBsyRoom [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelPic=" + hotelPic
+				+ ", pincode=" + pincode + ", ownrName=" + ownrName + ", contact=" + contact + ", email=" + email
+				+ ", image=" + image + ", acRoomCount=" + acRoomCount + ", nonacRoomCount=" + nonacRoomCount
+				+ ", acRoomCost=" + acRoomCost + ", nonacRoomCost=" + nonacRoomCost + ", delStatus=" + delStatus
+				+ ", cityId=" + cityId + ", nonacBsyRoom=" + nonacBsyRoom + ", acBsyRoom=" + acBsyRoom + ", cityName="
+				+ cityName + ", address=" + address + "]";
 	}
-	
+
+	 
+
+	 
 	
 
 }

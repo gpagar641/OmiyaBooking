@@ -27,6 +27,9 @@ public class Hotels {
 	@Column(name="pincode",length=50)
 	private String pincode;
 	
+	@Column(name="address",length=100)
+	private String address;
+	
 	@Column(name="ownr_name",length=200)
 	private String ownrName;
 	
@@ -161,13 +164,23 @@ public class Hotels {
 		this.cityId = cityId;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
-		return "Hotels [hotelId=" + hotelId + ", hotelName=" + hotelName + ", pincode=" + pincode + ", ownrName="
-				+ ownrName + ", contact=" + contact + ", email=" + email + ", image=" + image + ", acRoomCount="
-				+ acRoomCount + ", nonacRoomCount=" + nonacRoomCount + ", acRoomCost=" + acRoomCost + ", nonacRoomCost="
-				+ nonacRoomCost + ", delStatus=" + delStatus + ", cityId=" + cityId + "]";
+		return "Hotels [hotelId=" + hotelId + ", hotelName=" + hotelName + ", pincode=" + pincode + ", address="
+				+ address + ", ownrName=" + ownrName + ", contact=" + contact + ", email=" + email + ", image=" + image
+				+ ", acRoomCount=" + acRoomCount + ", nonacRoomCount=" + nonacRoomCount + ", acRoomCost=" + acRoomCost
+				+ ", nonacRoomCost=" + nonacRoomCost + ", delStatus=" + delStatus + ", cityId=" + cityId + "]";
 	}
+
+	 
 	
 	
 	

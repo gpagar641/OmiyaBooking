@@ -63,32 +63,51 @@
 	<div id="fh5co-wrapper">
 	<div id="fh5co-page">
 	<div id="fh5co-header">
-		<header id="fh5co-header-section">
-			<div class="container">
+	<header id="fh5co-header-section">
+			<%-- <div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html">Omiya</a></h1>
+					<h1 id="fh5co-logo"><a href="${pageContext.request.contextPath}/">Omiya</a></h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="index.html">Home</a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
 							
-							<li><a href="${pageContext.request.contextPath}/showHotels">Hotels</a></li>
-							<li><a href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+							<li><a href="#hotels">Hotels</a></li>
+							<li><a href="#contacts">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
-			</div>
+			</div> --%>
+			<header id="fh5co-header-section" style="background-color:#008433;">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<h1 id="fh5co-logo">
+							<a href="${pageContext.request.contextPath}/">Omiya</a>
+						</h1>
+						<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+
+
+							<li><a href="${pageContext.request.contextPath}/">Hotels</a></li>
+							<li><a href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+						</ul>
+						</nav>
+					</div>
+				</div>
+				</header>
 		</header>
 		
 	</div>
 	<!-- end:fh5co-header -->
-	<div class="fh5co-parallax" style="background-image: url(images/slider1.jpg);" data-stellar-background-ratio="0.5">
+	<div class="fh5co-parallax" style="background-image: url(${pageContext.request.contextPath}/resources/images/contact-us.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
-						<h1 class="text-center">Contact Us</h1>
+						
 						<!-- <p>Made with love by the fine folks at <a href="http://freehtml5.co">FreeHTML5.co</a></p> -->
 					</div>
 				</div>
@@ -143,47 +162,19 @@
 	</div>
 	
 
-	<footer id="footer" class="fh5co-bg-color">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
+	<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #008433;height:15px;">  
+		<div class="container" >
+			<div class="row" id ="contacts">
+				<div class="col-md-3" align="center">
 					<div class="copyright">
-						<p><small>&copy; 2016 Free HTML5 Template. <br> All Rights Reserved. <br>
-						Designed by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a> <br> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small></p>
+						<p style="color:white;"><small >&copy; 2018 All Rights Reserved. <br>
+						Designed by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> 
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="row">
-						<div class="col-md-3">
-							<h3>Company</h3>
-							<ul class="link">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Hotels</a></li>
-								<li><a href="#">Customer Care</a></li>
-								<li><a href="#">Contact Us</a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<h3>Our Facilities</h3>
-							<ul class="link">
-								<li><a href="#">Resturant</a></li>
-								<li><a href="#">Bars</a></li>
-								<li><a href="#">Pick-up</a></li>
-								<li><a href="#">Swimming Pool</a></li>
-								<li><a href="#">Spa</a></li>
-								<li><a href="#">Gym</a></li>
-							</ul>
-						</div>
-						<div class="col-md-6">
-							<h3>Subscribe</h3>
-							<p>Sed cursus ut nibh in semper. Mauris varius et magna in fermentum. </p>
-							<form action="#" id="form-subscribe">
-								<div class="form-field">
-									<input type="email" placeholder="Email Address" id="email">
-									<input type="submit" id="submit" value="Send">
-								</div>
-							</form>
-						</div>
+						
+					
 					</div>
 				</div>
 				<div class="col-md-3">
@@ -198,7 +189,15 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+ 	</footer>
+ 
+
+
+
+
+
+		</div>
+	
 
 	</div>
 	<!-- END fh5co-page -->

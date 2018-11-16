@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Omiya</title>
 
 
 <link rel="shortcut icon" href="favicon.ico">
@@ -50,20 +50,39 @@
 	<div id="fh5co-page">
 	<div id="fh5co-header">
 		<header id="fh5co-header-section">
-			<div class="container">
+			<%-- <div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html">Omiya</a></h1>
+					<h1 id="fh5co-logo"><a href="${pageContext.request.contextPath}/">Omiya</a></h1>
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="index.html">Home</a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
 							
 							<li><a href="#hotels">Hotels</a></li>
 							<li><a href="#contacts">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
-			</div>
+			</div> --%>
+			<header id="fh5co-header-section" style="background-color:#008433;">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<h1 id="fh5co-logo">
+							<a href="${pageContext.request.contextPath}/">Omiya</a>
+						</h1>
+						<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+
+
+							<li><a href="#fh5co-hotel-section">Hotels</a></li>
+							<li><a href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+						</ul>
+						</nav>
+					</div>
+				</div>
+				</header>
 		</header>
 		
 	</div>
@@ -118,7 +137,10 @@
 							<section>
 								<select class="cs-select cs-skin-border" name="cityid">
 									<option value="" disabled selected>Select City</option>
-									<option value="1">Nashik</option>
+									
+									<c:forEach var="cityList" items="${cityList}" varStatus="count"> 
+									<option value="${cityList.cityId}">${cityList.cityName }</option>
+									</c:forEach>
 									<!-- <option value="twitter">Deluxe Hotel</option>
 									<option value="linkedin">Five Star Hotel</option> -->
 								</select>
@@ -150,8 +172,68 @@
 	</div>
 	
 	
+	
+	
+	
+	
+	<div id="fh5co-hotel-section" style="margin-bottom: 0px; padding-bottom: 0px;">
+		<div class="container">
+			<div class="row">
+				 
+				
+				<c:forEach var="getHotelsAndBsyRoomList" items="${getHotelsAndBsyRoomList}" varStatus="count">
+ 					 	
+				<div class="col-md-4">
+					<div class="hotel-content">
+						<div class="hotel-grid" style="background-image: url(${pageContext.request.contextPath}/resources/images/hotel/${getHotelsAndBsyRoomList.hotelPic});">
+							<!-- <div class="price"><small>For as low as</small><h5>Rs 100/day</h5></div> -->
+							<%-- <a class="book-now text-center" href="#" data-toggle="modal" data-target="#myModal${getHotelsAndBsyRoomList.hotelId }"><i class="ti-calendar"></i> Book Now</a> --%>
+						</div>
+						<div class="desc">
+						<div class="col-md-12">
+					<div class="row">
+					<div class="col-md-10">
+							<h4><a href="${pageContext.request.contextPath}/showHotelsImages/?hotelId=${getHotelsAndBsyRoomList.hotelId}&hotelName=${getHotelsAndBsyRoomList.hotelName}"><strong style="color: green;">${getHotelsAndBsyRoomList.hotelName}</strong></a></h4>
+							</div>
+							<div class="col-md-2">
+							<h5><strong style="color: red;float: right">${getHotelsAndBsyRoomList.cityName}</strong></h5>
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-md-12">
+							<h6>${getHotelsAndBsyRoomList.address} ${getHotelsAndBsyRoomList.pincode}</h6>
+							  </div>
+					 
+							</div>
+							 
+							 <div class="row">
+							<div class="col-md-6">
+							<h5><strong style="color: red;">AC Room Cost :</strong> &#x20B9; ${getHotelsAndBsyRoomList.acRoomCost}/day</h5>
+							</div>
+					 <div class="col-md-6">
+							<h5><strong style="color: red;">Non AC Room Cost :</strong> &#x20B9; ${getHotelsAndBsyRoomList.nonacRoomCost}/day</h5>
+							</div>
+							</div>
+							 
+							</div> 
+							<p><a class="btn btn-primary btn-luxe-primary" href="${pageContext.request.contextPath}/showHotelsImages/?hotelId=${getHotelsAndBsyRoomList.hotelId}&hotelName=${getHotelsAndBsyRoomList.hotelName}"> More Images</a></p>
+						</div>
+					</div>
+			 		
+				</div>
+				
+			 
+				</c:forEach>
+</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
 
-	<div id="featured-hotel" class="fh5co-bg-color">
+	<%-- <div id="featured-hotel" class="fh5co-bg-color">
 		<div class="container">
 			
 			<div class="row" id="hotels">
@@ -201,16 +283,16 @@
 		</div>
 	</div>
 
-	
+	 --%>
 	 
 
 
-	<div id="fh5co-blog-section">
+	<div id="fh5co-blog-section" style="margin-top: 0px; padding-top: 0px;	">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-title text-center">
-						<h2>Our Blog</h2>
+						<h2>Explore Our Hotels</h2>
 					</div>
 				</div>
 			</div>
@@ -256,12 +338,12 @@
 		</div>
 	</div>
 
-	<footer id="footer" class="fh5co-bg-color">
-		<div class="container">
+	<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #008433;height:15px;">  
+		<div class="container" >
 			<div class="row" id ="contacts">
 				<div class="col-md-3" align="center">
 					<div class="copyright">
-						<p><small>&copy; 2018 All Rights Reserved. <br>
+						<p style="color:white;"><small >&copy; 2018 All Rights Reserved. <br>
 						Designed by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> 
 					</div>
 				</div>
@@ -283,7 +365,14 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+ 	</footer>
+ 
+
+
+
+
+
+		</div>
 
 	</div>
 	<!-- END fh5co-page -->

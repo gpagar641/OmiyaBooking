@@ -27,6 +27,27 @@ import com.maverick.demo.hotelrepository.ImageRepository;
 @Controller
 public class HomeController {
 
+	
+	
+	
+	// Add this dependency to resolve jsp errors
+			/*	
+				<dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>jsp-api</artifactId>
+			    <version>2.0</version>
+			    <scope>provided</scope>
+			    </dependency>
+			    
+				*/
+	
+	
+	// Add this line to application.properties for storing and loading css js from cache
+	
+				/*	spring.resources.cache.cachecontrol.max-age=14400
+				*/
+	
+	
 	@Autowired
 	HotelsRepository hotelsRepository;
 	

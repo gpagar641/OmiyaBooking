@@ -5,42 +5,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <title>Omiya</title>
 
 
 <link rel="shortcut icon" href="favicon.ico">
-	<!-- <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700italic,900,700,900italic' rel='stylesheet' type='text/css'> -->
+	
 
-	<!-- Stylesheets -->
-	<!-- Dropdown Menu -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/superfish.css">
-	<!-- Owl Slider -->
-	<!-- <link rel="stylesheet" href="css/owl.carousel.css"> -->
-	<!-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> -->
-	<!-- Date Picker -->
+	
+
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-datepicker.min.css">
-	<!-- CS Select -->
+	
+
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/cs-select.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/cs-skin-border.css">
 
-	<!-- Themify Icons -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/themify-icons.css">
-	<!-- Flat Icon -->
+
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/flaticon.css">
-	<!-- Icomoon -->
+	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/icomoon.css">
-	<!-- Flexslider  -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/flexslider.css">
 	
-	<!-- Style -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
-	<!-- Modernizr JS -->
 	<script src="${pageContext.request.contextPath}/resources/js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+	
 	
 </head>
 
@@ -48,8 +40,11 @@
 <body>
 	<div id="fh5co-wrapper">
 	<div id="fh5co-page">
-	<div id="fh5co-header">
-		<header id="fh5co-header-section">
+	<div id="fh5co-header" style="position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; padding-top: 0px;">
+		<header id="fh5co-header-section" style="padding-top: 0px;">
 			<%-- <div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
@@ -64,7 +59,7 @@
 					</nav>
 				</div>
 			</div> --%>
-			<header id="fh5co-header-section" style="background-color:#008433;">
+			<header id="fh5co-header-section" style="background-color:#2887C8;">
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
@@ -87,7 +82,7 @@
 		
 	</div>
 	<!-- end:fh5co-header -->
-	<aside id="fh5co-hero" class="js-fullheight">
+	<aside id="fh5co-hero" class="js-fullheight" style="height: 300px;">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
 		   	<li style="background-image: url(${pageContext.request.contextPath}/resources/images/img14.jpg);">
@@ -130,12 +125,12 @@
 	<div class="wrap">
 		<div class="container">
 			<div class="row">
-				<div id="availability">
+				<div id="availability"  style="background: #2887C8;">
 					<form action="${pageContext.request.contextPath}/showHotelList" method="post">
 
 						<div class="a-col">
 							<section>
-								<select class="cs-select cs-skin-border" name="cityid">
+								<select class="cs-select cs-skin-border" style="border-color: #d8e838;" name="cityid">
 									<option value="" disabled selected>Select City</option>
 									
 									<c:forEach var="cityList" items="${cityList}" varStatus="count"> 
@@ -149,17 +144,17 @@
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-start">Check In</label>
-								<input type="text" class="form-control" id="date-start" name="date_start" />
+								<input type="text"style="border-color: #d8e838;" class="form-control" id="date-start" name="date_start" />
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-end">Check Out</label>
-								<input type="text" class="form-control" id="date-end" name="date_end" />
+								<input type="text" style="border-color: #d8e838" class="form-control" id="date-end" name="date_end" />
 							</div>
 						</div>
 						<!-- <div class="a-col action"> -->
-							 <button type="submit" class="btn-primary">
+							 <button type="submit" class="btn-primary" style="background: #2887C8; border: 2px solid #2887C8; margin-right: 0px;padding-right: 0px; ">
 								<span>Check</span>
 								Availability
 								</button>
@@ -338,7 +333,7 @@
 		</div>
 	</div>
 
-	<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #008433;height:15px;">  
+	<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #2887C8;height:15px;">  
 		<div class="container" >
 			<div class="row" id ="contacts">
 				<div class="col-md-3" align="center">

@@ -7423,9 +7423,9 @@ figure {
 }
 
 .btn-primary {
-  background: #FF5722;
+  background: #729fcf;
   color: #fff;
-  border: 2px solid #FF5722;
+  border: 2px solid #729fcf;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #3c4146 !important;
@@ -7682,7 +7682,7 @@ figure {
   border-bottom: none !important;
 }
 .sf-menu a:hover, .sf-menu a:focus, .sf-menu a.active {
-  color: #fff !important;
+  color: #cfde38 !important;
 }
 
 .sf-menu li,
@@ -8020,7 +8020,7 @@ div.cs-select span {
   }
 }
 .cs-skin-border > span {
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #cddc39;
 }
 .cs-skin-border > span::after {
   font-size: 14px !important;
@@ -8036,7 +8036,7 @@ div.cs-select span {
 }
 
 #availability {
-  background: #FF5722;
+  background: #2887C8;
   width: 100%;
   top: 1em;
   z-index: 99;
@@ -8048,7 +8048,8 @@ div.cs-select span {
   -moz-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 19px 5px rgb(0, 0, 0);
+
 }
 @media screen and (max-width: 1176px) {
   #availability {
@@ -8202,7 +8203,7 @@ div.cs-select span {
   padding-bottom: 0 !important;
   color: #fff;
   background: transparent url(../images/arrow_down_input.png) 98% 90% no-repeat;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(211, 226, 59);
   border-radius: 0px;
   box-shadow: none;
 }
@@ -8791,11 +8792,11 @@ input[type="text"] {
   font-size: 16px;
 }
 #footer a {
-  color: #FF5722;
+  color: #e0f138;
 }
 #footer a:hover {
   text-decoration: underline !important;
-  color: #FF5722;
+  color: #b3c316;
 }
 #footer p {
   font-size: 16px;

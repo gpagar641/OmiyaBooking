@@ -3,25 +3,11 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Omiya Booking</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<title>Omiya</title>
 
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -62,8 +48,11 @@
 <body>
 	<div id="fh5co-wrapper">
 	<div id="fh5co-page">
-	<div id="fh5co-header">
-	<header id="fh5co-header-section">
+	<div id="fh5co-header" style="position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; padding-top: 0px;">
+		<header id="fh5co-header-section" style="padding-top: 0px;">
 			<%-- <div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
@@ -78,7 +67,7 @@
 					</nav>
 				</div>
 			</div> --%>
-			<header id="fh5co-header-section" style="background-color:#008433;">
+			<header id="fh5co-header-section" style="background-color:#2887C8;">
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
@@ -87,11 +76,11 @@
 						</h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+							<li><a  href="${pageContext.request.contextPath}/">Home</a></li>
 
 
 							<li><a href="${pageContext.request.contextPath}/">Hotels</a></li>
-							<li><a href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/showContact">Contact</a></li>
 						</ul>
 						</nav>
 					</div>
@@ -161,8 +150,7 @@
 		</div>
 	</div>
 	
-
-	<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #008433;height:15px;">  
+<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #2887C8;height:15px;">  
 		<div class="container" >
 			<div class="row" id ="contacts">
 				<div class="col-md-3" align="center">
@@ -190,8 +178,6 @@
 			</div>
 		</div>
  	</footer>
- 
-
 
 
 
@@ -206,32 +192,32 @@
 	<!-- END fh5co-wrapper -->
 	
 	<!-- Javascripts -->
-	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-2.1.4.min.js"></script>
 	<!-- Dropdown Menu -->
-	<script src="js/hoverIntent.js"></script>
-	<script src="js/superfish.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/hoverIntent.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/superfish.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.waypoints.min.js"></script>
 	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.countTo.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.stellar.min.js"></script>
 	<!-- Owl Slider -->
 	<!-- // <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Date Picker -->
-	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/classie.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/selectFx.js"></script>
 	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery.flexslider-min.js"></script>
 	<!-- Google Map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/google_map.js"></script>
 
-	<script src="js/custom.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
 
 </body>
 </html>

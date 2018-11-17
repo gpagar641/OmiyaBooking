@@ -65,10 +65,11 @@ public class HomeController {
 		ModelAndView model=new ModelAndView("index");
 		List<HotelImages> hotelImagesList=new ArrayList<HotelImages>();
 		try {
-			hotelImagesList=imageRepository.getHotelListWithBsyRoom();
-			System.out.println("hotelImagesList  "+hotelImagesList.toString());
+		hotelImagesList=imageRepository.getHotelListWithBsyRoom();
+		System.out.println("hotelImagesList  "+hotelImagesList.toString());
 		model.addObject("hotelImagesList",hotelImagesList);
 		List<City> cityList= cityRepository.findAll();
+		
 model.addObject("cityList",cityList);
 List<GetHotelsAndBsyRoom> getHotelsAndBsyRoomList=new ArrayList<GetHotelsAndBsyRoom>();
 try {
@@ -90,7 +91,7 @@ catch (Exception e) {
 			System.out.println(e.getMessage());// TODO: handle exception
 		}
 		
-		
+		model.addObject("date",new SimpleDateFormat("MM/dd/yyyy").format(new Date()));
 		return model;
 		
 	}	
@@ -162,6 +163,15 @@ catch (Exception e) {
 	public ModelAndView showHotelsList(HttpServletRequest request)   
 	{
 		ModelAndView model=new ModelAndView("hotelList2");
+		
+		
+		
+		return model;
+		
+	}	@RequestMapping(value="/showBankDetails", method=RequestMethod.POST)
+	public ModelAndView showBankDetails(HttpServletRequest request)   
+	{
+		ModelAndView model=new ModelAndView("bankDetails");
 		
 		
 		

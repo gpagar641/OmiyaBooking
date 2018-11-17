@@ -62,28 +62,62 @@
 <body>
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
-			<div id="fh5co-header">
-				<header id="fh5co-header-section" style="background-color:#008433;">
+		<div id="fh5co-header" style="position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; padding-top: 0px;">
+		<header id="fh5co-header-section" style="padding-top: 0px;">
+			<%-- <div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+					<h1 id="fh5co-logo"><a href="${pageContext.request.contextPath}/">Omiya</a></h1>
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+							
+							<li><a href="#hotels">Hotels</a></li>
+							<li><a href="#contacts">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div> --%>
+			<header id="fh5co-header-section" style="background-color:#2887C8;">
 				<div class="container">
-					<div class="nav-header">
+					<%-- <div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 						<h1 id="fh5co-logo">
 							<a href="${pageContext.request.contextPath}/">Omiya</a>
 						</h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+							<li><a  href="${pageContext.request.contextPath}/">Home</a></li>
 
 
-							<li><a class="active" href="#">Hotels</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="${pageContext.request.contextPath}/">Hotels</a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+						</ul>
+						</nav>
+					</div> --%>
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<h1 id="fh5co-logo">
+							<a href="${pageContext.request.contextPath}/"><strong style="color: cornsilk;">Omiya</strong><strong style="color: gold;">Booking.com</strong></a>
+						</h1>
+						<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active" href="${pageContext.request.contextPath}/"><strong style="color: white">Home</strong></a></li>
+
+
+							<li><a class="active" href="${pageContext.request.contextPath}/"><strong style="color: white">Hotels</strong></a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/showContact"><strong style="color: white">Contact</strong></a></li>
 						</ul>
 						</nav>
 					</div>
 				</div>
 				</header>
-
-			</div>
+		</header>
+		
+	</div>
 			<!-- end:fh5co-header -->
 
 
@@ -122,21 +156,25 @@
 
 
 			
-<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #008433;height:15px;">  
+<div>	 	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #2887C8;height:15px;">  
 		<div class="container" >
 			<div class="row" id ="contacts">
-				<div class="col-md-3" align="center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6" align="center">
 					<div class="copyright">
-						<p style="color:white;"><small >&copy; 2018 All Rights Reserved. <br>
-						Designed by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> 
+						<p style="color:white;">Web Design &amp; Development by
+<a href="http://www.corpokin.com/">CorpoKin </a>and Powered by <a href="http://v3datasolution.com/">V3 Data Solution</a>
+</p>
+						<!-- <p style="color:white;">
+						Powered by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> </p> -->
 					</div>
 				</div>
-				<div class="col-md-6">
+					<!-- <div class="col-md-6">
 					<div class="row">
 						
 					
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-3">
 					<ul class="social-icons">
 						<li>
@@ -151,6 +189,12 @@
 		</div>
  	</footer>
  
+
+
+
+
+
+	 
 
 
 

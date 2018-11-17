@@ -64,15 +64,15 @@
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 						<h1 id="fh5co-logo">
-							<a href="${pageContext.request.contextPath}/">Omiya</a>
+							<a href="${pageContext.request.contextPath}/"><strong style="color: cornsilk;">Omiya</strong><strong style="color: gold;">Booking.com</strong></a>
 						</h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/"><strong style="color: white">Home</strong></a></li>
 
 
-							<li><a href="#fh5co-hotel-section">Hotels</a></li>
-							<li><a href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+							<li><a class="active" href="#fh5co-hotel-section"><strong style="color: white">Hotels</strong></a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/showContact"><strong style="color: white">Contact</strong></a></li>
 						</ul>
 						</nav>
 					</div>
@@ -131,10 +131,17 @@
 						<div class="a-col">
 							<section>
 								<select class="cs-select cs-skin-border" style="border-color: #d8e838;" name="cityid">
-									<option value="" disabled selected>Select City</option>
+									<!-- <option value="" disabled selected>Select City</option> -->
 									
 									<c:forEach var="cityList" items="${cityList}" varStatus="count"> 
-									<option value="${cityList.cityId}">${cityList.cityName }</option>
+									<c:choose>
+									<c:when test="${cityList.cityId==1}">
+									<option selected value="${cityList.cityId}">${cityList.cityName }</option>
+									</c:when>
+									<c:otherwise>
+									<option  value="${cityList.cityId}">${cityList.cityName }</option>
+									</c:otherwise>
+									</c:choose>
 									</c:forEach>
 									<!-- <option value="twitter">Deluxe Hotel</option>
 									<option value="linkedin">Five Star Hotel</option> -->
@@ -144,17 +151,17 @@
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-start">Check In</label>
-								<input type="text"style="border-color: #d8e838;" class="form-control" id="date-start" name="date_start" />
+								<input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start" name="date_start" />
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-end">Check Out</label>
-								<input type="text" style="border-color: #d8e838" class="form-control" id="date-end" name="date_end" />
+								<input autocomplete="off" type="text" style="border-color: #d8e838" class="form-control" value="${date}" id="date-end" name="date_end" />
 							</div>
 						</div>
 						<!-- <div class="a-col action"> -->
-							 <button type="submit" class="btn-primary" style="background: #2887C8; border: 2px solid #2887C8; margin-right: 0px;padding-right: 0px; ">
+							 <button type="submit" class="btn-primary" style="background: #2887C8; border: 15px solid #b9c5cd; margin-right: 0px;padding-right: 0px; ">
 								<span>Check</span>
 								Availability
 								</button>
@@ -201,23 +208,166 @@
 					 
 							</div>
 							 
-							 <div class="row">
+							 <%-- <div class="row">
 							<div class="col-md-6">
 							<h5><strong style="color: red;">AC Room Cost :</strong> &#x20B9; ${getHotelsAndBsyRoomList.acRoomCost}/day</h5>
 							</div>
 					 <div class="col-md-6">
 							<h5><strong style="color: red;">Non AC Room Cost :</strong> &#x20B9; ${getHotelsAndBsyRoomList.nonacRoomCost}/day</h5>
 							</div>
-							</div>
+							</div> --%>
 							 
 							</div> 
-							<p><a class="btn btn-primary btn-luxe-primary" href="${pageContext.request.contextPath}/showHotelsImages/?hotelId=${getHotelsAndBsyRoomList.hotelId}&hotelName=${getHotelsAndBsyRoomList.hotelName}"> More Images</a></p>
-						</div>
+							<p><a class="btn btn-primary btn-luxe-primary" data-toggle="modal" data-target="#myModal${getHotelsAndBsyRoomList.hotelId }">Book Now</a>
+							<%-- 
+							<a class="btn btn-primary btn-luxe-primary" href="${pageContext.request.contextPath}/showHotelsImages/?hotelId=${getHotelsAndBsyRoomList.hotelId}&hotelName=${getHotelsAndBsyRoomList.hotelName}">More Images</a></p>
+						 --%></div>
 					</div>
 			 		
 				</div>
 				
-			 
+			 <div class="modal fade" id="myModal${getHotelsAndBsyRoomList.hotelId}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Customer Details</h4>
+        </div>
+       <!--  <div class="modal-body"> -->
+        <form action="${pageContext.request.contextPath}/showBankDetails" method="post">
+        
+    <div class="col-md-5"><strong> From Date :</strong><span>${date }</span></div><div class="col-md-4"><strong>To Date :</strong><span>${date }</span></div><div class="col-md-3"><strong>Days :</strong> ${1}</div>
+      <input type="hidden" id="days" name="days" value="${diffDays}">
+       <input type="hidden" id="nonAc" name="nonAc" value="${getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom}">
+        <input type="hidden" id="ac" name="ac" value="${getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom}">
+       <hr>
+        <div class="col-md-12">
+					<div class="row">
+					<div class="col-md-6">
+							<div class="form-group">
+							<select class="form-control" id="roomType${getHotelsAndBsyRoomList.hotelId}" name="roomType${getHotelsAndBsyRoomList.hotelId}" required>
+							<option value="" selected disabled>Select Room Type</option>
+							<c:choose>
+ 						<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)!=0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)!=0}">
+ 							
+ 							<option value="0">Non-AC Room</option>
+							<option value="1">AC Room</option>
+							
+							</c:when>
+							
+							<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)==0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)!=0}">
+ 							<option value="0">Non-AC Room</option>
+							<option value="1" disabled>AC Room</option>
+							
+							</c:when>
+							
+							<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)!=0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)==0}">
+ 							<option value="0" disabled>Non-AC Room</option>
+							<option value="1" >AC Room</option>
+							
+							</c:when>
+ 						 
+							</c:choose>
+							</select>
+								 
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="noOfRooms${getHotelsAndBsyRoomList.hotelId}" name="noOfRooms${getHotelsAndBsyRoomList.hotelId}" onkeyup="getTotalBill(); return checkNum(event,this);"   onkeypress="return IsNumeric(event,this);" placeholder="No of Rooms" required>
+							</div>
+						</div>
+						
+							<div class="col-md-6">
+							<div class="form-group">
+							<select class="form-control" id="noOfAdult${getHotelsAndBsyRoomList.hotelId}" name="noOfAdult${getHotelsAndBsyRoomList.hotelId}" required>
+							<option value="" selected disabled>Select No of Adult</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							</select>
+								 
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+							<select class="form-control" id="noOfChild${getHotelsAndBsyRoomList.hotelId}" name="noOfChild${getHotelsAndBsyRoomList.hotelId}" required>
+							<option value="" selected disabled>Select No of Child</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							</select>
+								 
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="custName${getHotelsAndBsyRoomList.hotelId}" name="custName${getHotelsAndBsyRoomList.hotelId}" placeholder="Custmore Name"required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" id="custContact${getHotelsAndBsyRoomList.hotelId}" name="custContact${getHotelsAndBsyRoomList.hotelId}" placeholder="Customer Contact"required>
+							</div>
+						</div>
+						 <div class="col-md-6">
+							<div class="form-group">
+							<!-- 	<input type="text" class="form-control" placeholder="Customer Address"required> -->
+								<textarea id="custAdd${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" id="" cols="30" rows="3" placeholder="Address" ></textarea>
+							</div>
+						</div>
+						 <div class="col-md-6">
+							<div class="form-group">
+								<input type="email" id="custMail${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" placeholder="Customer Email"required>
+							</div>
+						</div>
+						 
+						 
+						 
+						
+						 <div class="col-md-6">
+							<div class="form-group">
+								<span>Payable Amount (Rs.) </span><span>2000</span>
+							</div>
+						</div>
+						 
+						 
+						<div class="col-md-5">
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+							 <input type="submit" value="Proceed" class="btn btn-primary"> 
+							</div>
+						</div>
+					</div>
+				</div>
+        </form>
+        
+         <!--  <p>Some text in the modal.</p> -->
+       <!--  </div> -->
+         <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        </div>  
+      </div>
+      
+    </div>
+  </div>
 				</c:forEach>
 </div>
 			</div>
@@ -302,7 +452,7 @@
 						</div> -->
 					</div>
 					<div class="desc">
-						<h3><a href="#">${hotelImagesList[count.index+1].hotelName}</a></h3>
+						<h3><a href="#"><strong style="color: green;">${hotelImagesList[count.index+1].hotelName}</strong></a></h3>
 					</div>
 				</div>
 				</c:if>
@@ -336,18 +486,22 @@
 	<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #2887C8;height:15px;">  
 		<div class="container" >
 			<div class="row" id ="contacts">
-				<div class="col-md-3" align="center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6" align="center">
 					<div class="copyright">
-						<p style="color:white;"><small >&copy; 2018 All Rights Reserved. <br>
-						Designed by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> 
+						<p style="color:white;">Web Design &amp; Development by
+<a href="http://www.corpokin.com/">CorpoKin </a>and Powered by <a href="http://v3datasolution.com/">V3 Data Solution</a>
+</p>
+						<!-- <p style="color:white;">
+						Powered by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> </p> -->
 					</div>
 				</div>
-				<div class="col-md-6">
+					<!-- <div class="col-md-6">
 					<div class="row">
 						
 					
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-3">
 					<ul class="social-icons">
 						<li>

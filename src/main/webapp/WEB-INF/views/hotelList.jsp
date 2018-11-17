@@ -65,7 +65,7 @@
 			<div id="fh5co-header">
 				<header id="fh5co-header-section" style="background-color:gray;">
 				<div class="container">
-					<div class="nav-header">
+					<!-- <div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 						<h1 id="fh5co-logo">
 							<a href="index.html">Omiya</a>
@@ -77,6 +77,21 @@
 
 							<li><a href="services.html">Hotels</a></li>
 							<li><a href="contact.html">Contact</a></li>
+						</ul>
+						</nav>
+					</div> -->
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<h1 id="fh5co-logo">
+							<a href="${pageContext.request.contextPath}/"><strong style="color: cornsilk;">Omiya</strong><strong style="color: gold;">Booking.com</strong></a>
+						</h1>
+						<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active" href="${pageContext.request.contextPath}/"><strong style="color: white">Home</strong></a></li>
+
+
+							<li><a class="active" href="${pageContext.request.contextPath}/"><strong style="color: white">Hotels</strong></a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/showContact"><strong style="color: white">Contact</strong></a></li>
 						</ul>
 						</nav>
 					</div>
@@ -116,8 +131,8 @@
 									<div class='tile-info'">
 										<h4 style="margin-bottom: 0px;">Hotel Name ${getHotelsAndBsyRoomList.hotelName}</h4>
 										<p style="margin-bottom: 0px;font-size:18px;">City ${getHotelsAndBsyRoomList.cityName}</p> 
-										<p style="margin-bottom: 0px ;font-size:18px;">AC Room - &#x20B9;${getHotelsAndBsyRoomList.acRoomCost}</p>
-										<p style="margin-bottom: 0px; font-size:18px;">Non AC Room - &#x20B9;${getHotelsAndBsyRoomList.nonacRoomCost}</p>
+										<%-- <p style="margin-bottom: 0px ;font-size:18px;">AC Room - &#x20B9;${getHotelsAndBsyRoomList.acRoomCost}</p>
+										<p style="margin-bottom: 0px; font-size:18px;">Non AC Room - &#x20B9;${getHotelsAndBsyRoomList.nonacRoomCost}</p> --%>
 
 										<a class="btn btn-primary btn-luxe-primary" data-toggle="modal" data-target="#myModal${getHotelsAndBsyRoomList.hotelId }"> Book Now</a>
 ${ getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom }
@@ -138,7 +153,7 @@ ${ getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom }
           <h4 class="modal-title">Customer Details</h4>
         </div>
        <!--  <div class="modal-body"> -->
-        <form action="">
+        <form action="${pageContext.request.contextPath}/showBankDetails" method="post">
         
     <div class="col-md-5"><strong> From Date :</strong><span>${startDate }</span></div><div class="col-md-4"><strong>To Date :</strong><span>${endDate }</span></div><div class="col-md-3"><strong>Days :</strong> ${diffDays}</div>
       <input type="hidden" id="days" name="days" value="${diffDays}">
@@ -254,7 +269,7 @@ ${ getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom }
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<input type="submit" value="Proceed" class="btn btn-primary">
+							 <input type="submit" value="Proceed" class="btn btn-primary"> 
 							</div>
 						</div>
 					</div>
@@ -291,8 +306,11 @@ ${ getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom }
 			<div class="row" id ="contacts">
 				<div class="col-md-3" align="center">
 					<div class="copyright">
-						<p style="color:white;"><small >&copy; 2018 All Rights Reserved. <br>
-						Designed by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> 
+						<p style="color:white;">Web Design &amp; Development by
+<a href="http://www.corpokin.com/">CorpoKin </a>and Powered by <a href="http://v3datasolution.com/">V3 Data Solution</a>
+</p>
+						<!-- <p style="color:white;">
+						Powered by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> </p> -->
 					</div>
 				</div>
 				<div class="col-md-6">

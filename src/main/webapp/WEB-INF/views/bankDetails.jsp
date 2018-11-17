@@ -105,37 +105,39 @@
 		
 	</div>
 	<!-- end:fh5co-header -->
-	<div class="fh5co-parallax" style="background-image: url(${pageContext.request.contextPath}/resources/images/contact-us.jpg);" data-stellar-background-ratio="0.5">
+	<%-- <div class="fh5co-parallax" style="background-image: url(${pageContext.request.contextPath}/resources/images/contact-us.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
 						
-						<!-- <p>Made with love by the fine folks at <a href="http://freehtml5.co">FreeHTML5.co</a></p> -->
+						 
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 
 	<div id="fh5co-contact-section">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<!-- <div id="map" class="fh5co-map"></div> -->
 			</div>
 			<div class="col-md-6">
 				<div class="col-md-12">
-					<h3>Our Address</h3>
+					<h3>Bank Details</h3>
 					<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
 					<ul class="contact-info">
-						<li><i class="ti-map"></i>Flat no. 9, Vastushree Apartment Datta Mandir Road, Nashik Road, Nashik-422101</li>
-						<li><i class="ti-mobile"></i>+ 91-9096000215</li>
-						<li><i class="ti-envelope"></i><a href="#">omiyabooking@gmail.com</a></li>
-						<li><i class="ti-home"></i><a href="#">www.omiyabooking.com</a></li>
+						<li style="color: black"><i class="ti-map"></i><strong>Bank name :</strong> Indian Oveseas Bank</li>
+						<li style="color: black"><i class="ti-map"></i><strong>Account Holder :</strong> Omiyabooking</li>
+						<li style="color: black"><i class="ti-map"></i><strong>Account no:</strong> 304902000000276</li>
+						<li style="color: black"><i class="ti-map"></i><strong>IFSC Code :</strong> IOBA0003049</li>
 					</ul>
 				</div>
-				<form method="POST" action='sendMailToContactUs'>
+				
+				<p>* Terms & Condition for cancellation of booking payment not refundable.</p>
+				<!-- <form method="POST" action='sendMailToContactUs'>
 				<div class="col-md-12">
 					<div class="row">
 						<div class="col-md-6">
@@ -160,7 +162,7 @@
 						</div>
 					</div>
 				</div>
-				</form>
+				</form> -->
 			</div>
 		</div>
 	</div>
@@ -168,19 +170,22 @@
 <div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #2887C8;height:15px;">  
 		<div class="container" >
 			<div class="row" id ="contacts">
-				<div class="col-md-3" align="center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6" align="center">
 					<div class="copyright">
 						<p style="color:white;">Web Design &amp; Development by
 <a href="http://www.corpokin.com/">CorpoKin </a>and Powered by <a href="http://v3datasolution.com/">V3 Data Solution</a>
 </p>
+						<!-- <p style="color:white;">
+						Powered by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> </p> -->
 					</div>
 				</div>
-				<div class="col-md-6">
+					<!-- <div class="col-md-6">
 					<div class="row">
 						
 					
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-3">
 					<ul class="social-icons">
 						<li>
@@ -194,6 +199,8 @@
 			</div>
 		</div>
  	</footer>
+ 
+
 
 
 

@@ -121,14 +121,14 @@
 					 
 							</div>
 							 
-							 <div class="row">
+							 <%-- <div class="row">
 							<div class="col-md-6">
 							<h5><strong style="color: red;">AC Room Cost :</strong> &#x20B9; ${getHotelsAndBsyRoomList.acRoomCost}/day</h5>
 							</div>
 					 <div class="col-md-6">
 							<h5><strong style="color: red;">Non AC Room Cost :</strong> &#x20B9; ${getHotelsAndBsyRoomList.nonacRoomCost}/day</h5>
 							</div>
-							</div>
+							</div> --%>
 							 
 							</div> 
 							<p><a class="btn btn-primary btn-luxe-primary" data-toggle="modal" data-target="#myModal${getHotelsAndBsyRoomList.hotelId }"> Book Now</a></p>
@@ -298,8 +298,11 @@
 			<div class="row" id ="contacts">
 				<div class="col-md-3" align="center">
 					<div class="copyright">
-						<p style="color:white;"><small >&copy; 2018 All Rights Reserved. <br>
-						Designed by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> 
+						<p style="color:white;">Web Design &amp; Development by
+<a href="http://www.corpokin.com/">CorpoKin </a>and Powered by <a href="http://v3datasolution.com/">V3 Data Solution</a>
+</p>
+						<!-- <p style="color:white;">
+						Powered by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> </p> -->
 					</div>
 				</div>
 				<div class="col-md-6">

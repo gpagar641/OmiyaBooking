@@ -279,7 +279,7 @@
 							<option value="1">AC Room</option>
 							
 							</c:when>
-							
+							   
 							<c:when test="${(getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom)==0 && (getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom)!=0}">
  							<option value="0">Non-AC Room</option>
 							<option value="1" disabled>AC Room</option>

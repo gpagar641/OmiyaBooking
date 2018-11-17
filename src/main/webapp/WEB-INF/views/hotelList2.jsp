@@ -62,28 +62,47 @@
 <body>
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
-			<div id="fh5co-header">
-				<header id="fh5co-header-section" style="background-color:#008433;">
+			<div id="fh5co-header" style="position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%; padding-top: 0px;">
+		<header id="fh5co-header-section" style="padding-top: 0px;">
+			<%-- <div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+					<h1 id="fh5co-logo"><a href="${pageContext.request.contextPath}/">Omiya</a></h1>
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+							
+							<li><a href="#hotels">Hotels</a></li>
+							<li><a href="#contacts">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div> --%>
+			<header id="fh5co-header-section" style="background-color:#2887C8;">
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 						<h1 id="fh5co-logo">
-							<a href="${pageContext.request.contextPath}/">Omiya</a>
+							<a href="${pageContext.request.contextPath}/"><strong style="color: cornsilk;">Omiya</strong><strong style="color: gold;">Booking.com</strong></a>
 						</h1>
 						<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a class="active" href="${pageContext.request.contextPath}/">Home</a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/"><strong style="color: white">Home</strong></a></li>
 
 
-								<li><a href="${pageContext.request.contextPath}/">Hotels</a></li>
-							<li><a href="${pageContext.request.contextPath}/showContact">Contact</a></li>
+							<li><a class="active" href="#fh5co-hotel-section"><strong style="color: white">Hotels</strong></a></li>
+							<li><a class="active" href="${pageContext.request.contextPath}/showContact"><strong style="color: white">Contact</strong></a></li>
 						</ul>
 						</nav>
 					</div>
 				</div>
 				</header>
-
-			</div>
+		</header>
+		
+	</div>
 			<!-- end:fh5co-header -->
 
 
@@ -146,10 +165,13 @@
           <h4 class="modal-title">Customer Details</h4>
         </div>
        <!--  <div class="modal-body"> -->
-        <form action="">
+         <form action="${pageContext.request.contextPath}/showBankDetails" method="post">
         
     <div class="col-md-5"><strong> From Date :</strong><span>${startDate }</span></div><div class="col-md-4"><strong>To Date :</strong><span>${endDate }</span></div><div class="col-md-3"><strong>Days :</strong> ${diffDays}</div>
-      <input type="hidden" id="days" name="days" value="${diffDays}">
+      
+      <input type="hidden" id="hotelName" name="hotelName" value="${getHotelsAndBsyRoomList.hotelName}">
+       <input type="hidden" id="hotelId" name="hotelId" value="${getHotelsAndBsyRoomList.hotelId}">
+      <%-- <input type="hidden" id="days" name="days" value="${diffDays}"> --%>
        <input type="hidden" id="nonAc" name="nonAc" value="${getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom}">
         <input type="hidden" id="ac" name="ac" value="${getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom}">
        <hr>
@@ -211,7 +233,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 							<select class="form-control" id="noOfChild${getHotelsAndBsyRoomList.hotelId}" name="noOfChild${getHotelsAndBsyRoomList.hotelId}" required>
-							<option value="0" selected disabled>0 Child</option>
+							<option value="0" selected disabled>0</option>
 							 
 							<option value="1">1 Child</option>
 							<option value="2">2 Child</option>
@@ -245,7 +267,7 @@
 						</div>
 						 <div class="col-md-6">
 							<div class="form-group">
-								<input type="email" id="custMail${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" placeholder="Customer Email"required>
+								<input type="email" id="custMail${getHotelsAndBsyRoomList.hotelId}" name="email" class="form-control" placeholder="Customer Email"required>
 							</div>
 						</div>
 						 
@@ -293,10 +315,11 @@
 
 
 			
-<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #008433;height:15px;">  
+<div>	 <footer id="footer" class="fh5co-bg-color-dark"style="background-color: #2887C8;height:15px;">  
 		<div class="container" >
 			<div class="row" id ="contacts">
-				<div class="col-md-3" align="center">
+				<div class="col-md-3"></div>
+				<div class="col-md-6" align="center">
 					<div class="copyright">
 						<p style="color:white;">Web Design &amp; Development by
 <a href="http://www.corpokin.com/">CorpoKin </a>and Powered by <a href="http://v3datasolution.com/">V3 Data Solution</a>
@@ -305,12 +328,12 @@
 						Powered by <a href="http://v3datasolution.com" target="_blank">V3 Data Solutions</a> </p> -->
 					</div>
 				</div>
-				<div class="col-md-6">
+					<!-- <div class="col-md-6">
 					<div class="row">
 						
 					
 					</div>
-				</div>
+				</div> -->
 				<div class="col-md-3">
 					<ul class="social-icons">
 						<li>
@@ -324,7 +347,6 @@
 			</div>
 		</div>
  	</footer>
- 
 
 
 

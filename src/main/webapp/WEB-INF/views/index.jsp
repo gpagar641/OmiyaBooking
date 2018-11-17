@@ -91,7 +91,8 @@
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>OMIYA</span></p>
+		   						<!-- <p><span>OMIYA</span></p> -->
+		   						<h1>	<strong style="background:orange;">OMIYA</strong></h1>
 		   						<h2>Reserve Room for Family Vacation</h2>
 			   					<!-- <p>
 			   						<a href="#hotels" class="btn btn-primary btn-lg">Book Now</a>
@@ -107,7 +108,7 @@
 		   			<div class="col-md-12 col-md-offset-0 text-center slider-text">
 		   				<div class="slider-text-inner js-fullheight">
 		   					<div class="desc">
-		   						<p><span>OMIYA</span></p>
+		   					<h1>	<strong style="background:orange;">OMIYA</strong></h1>
 		   						<h2>Make Your Vacation Comfortable</h2>
 			   					<!-- <p>
 			   						<a href="#" class="btn btn-primary btn-lg">Book Now</a>
@@ -237,11 +238,33 @@
         </div>
        <!--  <div class="modal-body"> -->
         <form action="${pageContext.request.contextPath}/showBankDetails" method="post">
-        
-    <div class="col-md-5"><strong> From Date :</strong><span>${date }</span></div><div class="col-md-4"><strong>To Date :</strong><span>${date }</span></div><div class="col-md-3"><strong>Days :</strong> ${1}</div>
-      <input type="hidden" id="days" name="days" value="${diffDays}">
+        <div class="col-md-12">
+    <div class="col-md-6">
+    	<div class="form-group">
+    <strong> From Date :</strong>
+    
+    <span><%-- ${date } --%>
+    <input autocomplete="off" type="text" class="form-control datepicker" id="date-start" name="fromDate" />
+    <%-- <input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start" name="date_start" /> --%>
+    </span>
+    </div>
+    </div><div class="col-md-6">
+    <div class="form-group">
+    <strong>To Date :</strong><span><%-- ${date } --%>
+    <input autocomplete="off" type="text" class="form-control datepicker" id="date-end" name="toDate" />
+    </span></div>
+    </div>
+   <%--  <div class="col-md-4">
+    <div class="form-group">
+    <strong>Days :</strong> ${1}</div></div> --%>
+      
+      <input type="hidden" id="hotelName" name="hotelName" value="${getHotelsAndBsyRoomList.hotelName}">
+       <input type="hidden" id="hotelId" name="hotelId" value="${getHotelsAndBsyRoomList.hotelId}">
+      <%-- <input type="hidden" id="days" name="days" value="${diffDays}"> --%>
        <input type="hidden" id="nonAc" name="nonAc" value="${getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom}">
         <input type="hidden" id="ac" name="ac" value="${getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom}">
+     
+       </div>
        <hr>
         <div class="col-md-12">
 					<div class="row">
@@ -284,6 +307,7 @@
 							<div class="form-group">
 							<select class="form-control" id="noOfAdult${getHotelsAndBsyRoomList.hotelId}" name="noOfAdult${getHotelsAndBsyRoomList.hotelId}" required>
 							<option value="" selected disabled>Select No of Adult</option>
+							
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -301,7 +325,8 @@
 						<div class="col-md-6">
 							<div class="form-group">
 							<select class="form-control" id="noOfChild${getHotelsAndBsyRoomList.hotelId}" name="noOfChild${getHotelsAndBsyRoomList.hotelId}" required>
-							<option value="" selected disabled>Select No of Child</option>
+					<!-- 		<option value="" selected disabled>Select No of Child</option> -->
+							<option value="0" selected disabled>0</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -334,18 +359,18 @@
 						</div>
 						 <div class="col-md-6">
 							<div class="form-group">
-								<input type="email" id="custMail${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" placeholder="Customer Email"required>
+								<input type="email" id="custMail${getHotelsAndBsyRoomList.hotelId}" name="email" class="form-control" placeholder="Customer Email"required>
 							</div>
 						</div>
 						 
 						 
 						 
 						
-						 <div class="col-md-6">
+						 <!-- <div class="col-md-6">
 							<div class="form-group">
 								<span>Payable Amount (Rs.) </span><span>2000</span>
 							</div>
-						</div>
+						</div> -->
 						 
 						 
 						<div class="col-md-5">
@@ -531,6 +556,8 @@
 	
 	<!-- Javascripts -->
 	<script src="${pageContext.request.contextPath}/resources/js/jquery-2.1.4.min.js"></script>
+	
+	
 	<!-- Dropdown Menu -->
 	<script src="${pageContext.request.contextPath}/resources/js/hoverIntent.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/superfish.js"></script>
@@ -545,7 +572,8 @@
 	<!-- Owl Slider -->
 	<!-- // <script src="js/owl.carousel.min.js"></script> -->
 	<!-- Date Picker -->
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.min.js"></script>
+	 <script src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.min.js"></script> 
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"> -->
 	<!-- CS Select -->
 	<script src="${pageContext.request.contextPath}/resources/js/classie.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/selectFx.js"></script>
@@ -553,8 +581,25 @@
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.flexslider-min.js"></script>
 
 	<script src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
-
+	
 </body>
+<script type="text/javascript">
+
+	              /* $(".datepicker").datepicker({
+	            	  dateFormat: "yy-mm-dd",
+	            	  minDate: 0,
+	            	  autoclose: true
+	            	}); */
+	            	$(".datepicker").datepicker({
+		            	 format: "mm/dd/yyyy",
+		            	 top:936.6px, 
+		            	 autoclose: true
+		            	  
+		            	});
+
+	          
+</script>
+
 
 
 </html>

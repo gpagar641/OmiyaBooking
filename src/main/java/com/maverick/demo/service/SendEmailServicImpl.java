@@ -35,7 +35,9 @@ public class SendEmailServicImpl implements SendEMailService {
 			sender.send(message);
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
+		
 		return "Mail Sent Success!";
 	}
 

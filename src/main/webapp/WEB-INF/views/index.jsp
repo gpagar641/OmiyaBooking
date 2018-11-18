@@ -9,7 +9,39 @@
 	
 <title>Omiya</title>
 
+<style>
+* {
+  box-sizing:border-box;
+}
 
+.left {
+  background-color:#2196F3;
+  padding:20px;
+  float:left;
+  width:20%; /* The width is 20%, by default */
+}
+
+.main {
+  background-color:#f1f1f1;
+  padding:20px;
+  float:left;
+  width:60%; /* The width is 60%, by default */
+}
+
+.right {
+  background-color:#4CAF50;
+  padding:20px;
+  float:left;
+  width:20%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width:800px) {
+  .left, .main, .right {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</style>
 <link rel="shortcut icon" href="favicon.ico">
 	
 
@@ -152,13 +184,13 @@
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-start">Check In</label>
-								<input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start" name="date_start" />
+								<input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start1" name="date_start" />
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-end">Check Out</label>
-								<input autocomplete="off" type="text" style="border-color: #d8e838" class="form-control" value="${date}" id="date-end" name="date_end" />
+								<input autocomplete="off" type="text" style="border-color: #d8e838" class="form-control" value="${date}" id="date-end1" name="date_end" />
 							</div>
 						</div>
 						<!-- <div class="a-col action"> -->
@@ -592,26 +624,27 @@
 	            	  autoclose: true
 	            	}); */
 	            	$(function () {
-	                    $("#fromDate").datepicker({
-	                        dateFormat: "mm/dd/yy",
+	                    $("#date-start1").datepicker({
+	                    	format: "dd/mm/yyyy",
 	                        showOtherMonths: true,
 	                        selectOtherMonths: true,
 	                        autoclose: true,
 	                        changeMonth: true,
 	                        changeYear: true,
-	                        //gotoCurrent: true,
-	                    });
+	                        gotoCurrent: true,
+	                    }).datepicker("setDate",'now');
 	            });
 	            	$(function () {
-	                    $("#toDate").datepicker({
-	                        dateFormat: "mm/dd/yy",
+	                    $("#date-end1").datepicker({
+	                       
 	                        showOtherMonths: true,
 	                        selectOtherMonths: true,
 	                        autoclose: true,
 	                        changeMonth: true,
 	                        changeYear: true,
-	                        //gotoCurrent: true,
-	                    });
+	                        format: "dd/mm/yyyy",
+	                        gotoCurrent: true,
+	                    }).datepicker("setDate",'now');
 	            });
 
 	          

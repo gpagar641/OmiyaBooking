@@ -131,7 +131,7 @@
 					<ul class="contact-info">
 						<li><i class="ti-map"></i>Flat no. 9, Vastushree Apartment Datta Mandir Road, Nashik Road, Nashik-422101</li>
 						<li><i class="ti-mobile"></i>+ 91-9096000215</li>
-						<li><i class="ti-envelope"></i><a href="#">omiyabooking@gmail.com</a></li>
+						<li><i class="ti-envelope"></i><a href="#">info@omiyabooking.com</a></li>
 						<li><i class="ti-home"></i><a href="#">www.omiyabooking.com</a></li>
 					</ul>
 				</div>

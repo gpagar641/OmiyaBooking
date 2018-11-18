@@ -238,33 +238,14 @@
         </div>
        <!--  <div class="modal-body"> -->
         <form action="${pageContext.request.contextPath}/showBankDetails" method="post">
-        <div class="col-md-12">
-    <div class="col-md-6">
-    	<div class="form-group">
-    <strong> From Date :</strong>
     
-    <span><%-- ${date } --%>
-    <input autocomplete="off" type="text" class="form-control datepicker" id="date-start" name="fromDate" />
-    <%-- <input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start" name="date_start" /> --%>
-    </span>
-    </div>
-    </div><div class="col-md-6">
-    <div class="form-group">
-    <strong>To Date :</strong><span><%-- ${date } --%>
-    <input autocomplete="off" type="text" class="form-control datepicker" id="date-end" name="toDate" />
-    </span></div>
-    </div>
-   <%--  <div class="col-md-4">
-    <div class="form-group">
-    <strong>Days :</strong> ${1}</div></div> --%>
-      
       <input type="hidden" id="hotelName" name="hotelName" value="${getHotelsAndBsyRoomList.hotelName}">
        <input type="hidden" id="hotelId" name="hotelId" value="${getHotelsAndBsyRoomList.hotelId}">
       <%-- <input type="hidden" id="days" name="days" value="${diffDays}"> --%>
        <input type="hidden" id="nonAc" name="nonAc" value="${getHotelsAndBsyRoomList.nonacRoomCount-getHotelsAndBsyRoomList.nonacBsyRoom}">
         <input type="hidden" id="ac" name="ac" value="${getHotelsAndBsyRoomList.acRoomCount-getHotelsAndBsyRoomList.acBsyRoom}">
      
-       </div>
+       
        <hr>
         <div class="col-md-12">
 					<div class="row">
@@ -354,7 +335,7 @@
 						 <div class="col-md-6">
 							<div class="form-group">
 							<!-- 	<input type="text" class="form-control" placeholder="Customer Address"required> -->
-								<textarea id="custAdd${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" id="" cols="30" rows="3" placeholder="Address" ></textarea>
+								<textarea id="custAdd${getHotelsAndBsyRoomList.hotelId}" name="custAdd${getHotelsAndBsyRoomList.hotelId}" class="form-control" id="" cols="30" rows="1" placeholder="Address" ></textarea>
 							</div>
 						</div>
 						 <div class="col-md-6">
@@ -364,7 +345,27 @@
 						</div>
 						 
 						 
-						 
+						 <div class="col-md-12">
+    <div class="col-md-6">
+    <div class="form-group">
+    <!-- <strong> From Date :</strong> -->
+    
+    <span><%-- ${date } --%>
+    <input autocomplete="off" type="text" class="form-control datepicker" id="fromDate" name="fromDate" Placeholder="from date"/>
+    <%-- <input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start" name="date_start" /> --%>
+    </span>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="form-group">
+    <!-- <strong>To Date :</strong> --><span><%-- ${date } --%>
+    <input autocomplete="off" type="text" class="form-control datepicker" id="toDate" name="toDate" Placeholder="to date"/>
+    </span></div>
+    </div>
+   <%--  <div class="col-md-4">
+    <div class="form-group">
+    <strong>Days :</strong> ${1}</div></div> --%>
+      </div>
 						
 						 <!-- <div class="col-md-6">
 							<div class="form-group">
@@ -590,12 +591,28 @@
 	            	  minDate: 0,
 	            	  autoclose: true
 	            	}); */
-	            	$(".datepicker").datepicker({
-		            	 format: "mm/dd/yyyy",
-		            	 top:936.6px, 
-		            	 autoclose: true
-		            	  
-		            	});
+	            	$(function () {
+	                    $("#fromDate").datepicker({
+	                        dateFormat: "mm/dd/yy",
+	                        showOtherMonths: true,
+	                        selectOtherMonths: true,
+	                        autoclose: true,
+	                        changeMonth: true,
+	                        changeYear: true,
+	                        //gotoCurrent: true,
+	                    });
+	            });
+	            	$(function () {
+	                    $("#toDate").datepicker({
+	                        dateFormat: "mm/dd/yy",
+	                        showOtherMonths: true,
+	                        selectOtherMonths: true,
+	                        autoclose: true,
+	                        changeMonth: true,
+	                        changeYear: true,
+	                        //gotoCurrent: true,
+	                    });
+	            });
 
 	          
 </script>

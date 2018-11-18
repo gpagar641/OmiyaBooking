@@ -184,13 +184,13 @@
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-start">Check In</label>
-								<input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start1" name="date_start" />
+								<input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start1" name="date_start1" />
 							</div>
 						</div>
 						<div class="a-col alternate">
 							<div class="input-field">
 								<label for="date-end">Check Out</label>
-								<input autocomplete="off" type="text" style="border-color: #d8e838" class="form-control" value="${date}" id="date-end1" name="date_end" />
+								<input autocomplete="off" type="text" style="border-color: #d8e838" class="form-control" value="${date}" id="date-end1" name="date_end1" />
 							</div>
 						</div>
 						<!-- <div class="a-col action"> -->
@@ -383,16 +383,17 @@
     <!-- <strong> From Date :</strong> -->
     
     <span><%-- ${date } --%>
-    <input autocomplete="off" type="text" class="form-control datepicker" id="fromDate" name="fromDate" Placeholder="from date"/>
-    <%-- <input autocomplete="off" type="text"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start" name="date_start" /> --%>
+     <input autocomplete="off" type="date"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-start2" name="date_start2" /> 
     </span>
     </div>
     </div>
     <div class="col-md-6">
     <div class="form-group">
     <!-- <strong>To Date :</strong> --><span><%-- ${date } --%>
-    <input autocomplete="off" type="text" class="form-control datepicker" id="toDate" name="toDate" Placeholder="to date"/>
-    </span></div>
+   <!--  <input autocomplete="off" type="text" class="form-control datepicker" id="toDate" name="toDate" Placeholder="to date"/>
+    -->
+    
+    <input autocomplete="off" type="date"style="border-color: #d8e838;" class="form-control" value="${date}" id="date-end2" name="date_end2" /> </span></div>
     </div>
    <%--  <div class="col-md-4">
     <div class="form-group">
@@ -646,7 +647,29 @@
 	                        gotoCurrent: true,
 	                    }).datepicker("setDate",'now');
 	            });
-
+	            	$(function () {
+	                    $("#date-start2").datepicker({
+	                    	format: "dd/mm/yyyy",
+	                        showOtherMonths: true,
+	                        selectOtherMonths: true,
+	                        autoclose: true,
+	                        changeMonth: true,
+	                        changeYear: true,
+	                        gotoCurrent: true,
+	                    }).datepicker("setDate",'now');
+	            });
+	            	$(function () {
+	                    $("#date-end2").datepicker({
+	                       
+	                        showOtherMonths: true,
+	                        selectOtherMonths: true,
+	                        autoclose: true,
+	                        changeMonth: true,
+	                        changeYear: true,
+	                        format: "dd/mm/yyyy",
+	                        gotoCurrent: true,
+	                    }).datepicker("setDate",'now');
+	            });
 	          
 </script>
 

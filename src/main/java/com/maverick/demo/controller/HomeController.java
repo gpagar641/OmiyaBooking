@@ -95,8 +95,8 @@ public class HomeController {
 	public ModelAndView showHotelList(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("hotelList2");
 
-		String startDate = request.getParameter("date_start");
-		String endDate = request.getParameter("date_end");
+		String startDate = request.getParameter("date_start1");
+		String endDate = request.getParameter("date_end1");
 		int cityId = Integer.parseInt(request.getParameter("cityid"));
 		List<GetHotelsAndBsyRoom> getHotelsAndBsyRoomList = new ArrayList<GetHotelsAndBsyRoom>();
 		SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -169,8 +169,8 @@ public class HomeController {
 		getUserDetails.setCustContact(request.getParameter("custContact"+hotelId));
 		getUserDetails.setCustName(request.getParameter("custName"+hotelId));
 		getUserDetails.setEmail(request.getParameter("email"));
-		getUserDetails.setFromDate(request.getParameter("fromDate"));
-		getUserDetails.setToDate(request.getParameter("toDate"));
+		getUserDetails.setFromDate(request.getParameter("date_start2"));
+		getUserDetails.setToDate(request.getParameter("date_end2"));
 		getUserDetails.setNoOfAdults(Integer.parseInt(request.getParameter("noOfAdult"+hotelId)));
 		getUserDetails.setNoOfChild(Integer.parseInt(request.getParameter("noOfChild"+hotelId)));
 		getUserDetails.setNoOfRooms(Integer.parseInt(request.getParameter("noOfRooms"+hotelId)));
